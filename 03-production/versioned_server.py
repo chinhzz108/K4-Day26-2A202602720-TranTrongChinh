@@ -7,6 +7,9 @@ sẽ bị break nếu không có chiến lược versioning. Ví dụ này minh 
   2. Tham số optional với default — thêm tính năng mà không break client cũ
   3. Server version trong metadata — client kiểm tra version trước khi gọi
 
+Học viên: Trần Trọng Chinh
+Mã học viên: 2A202602720
+
 Cách chạy:
     pip install -r ../requirements.txt
     python versioned_server.py
@@ -15,7 +18,17 @@ Cách chạy:
 from __future__ import annotations
 
 import json
+import os
+import sys
 from datetime import datetime, timezone
+
+# Ensure UTF-8 output on Windows
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 from mcp.server.mcpserver import MCPServer
 

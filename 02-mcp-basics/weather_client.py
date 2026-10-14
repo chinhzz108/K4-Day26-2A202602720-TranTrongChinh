@@ -8,6 +8,9 @@ Ví dụ này không cần ANTHROPIC_API_KEY — nó cho thấy lớp giao thứ
 động độc lập với model. (Trong thực tế, một LLM sẽ dùng Function Calling để
 quyết định khi nào gọi tool đã khám phá được.)
 
+Học viên: Trần Trọng Chinh
+Mã học viên: 2A202602720
+
 Cách chạy (cùng thư mục với weather_server.py, client tự khởi động server):
     pip install -r ../requirements.txt
     python weather_client.py
@@ -15,6 +18,14 @@ Cách chạy (cùng thư mục với weather_server.py, client tự khởi độ
 
 import asyncio
 import sys
+
+# Ensure UTF-8 output on Windows
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client

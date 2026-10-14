@@ -7,6 +7,9 @@ code bên trong.
 
 Schema của tool được TỰ ĐỘNG sinh ra từ type hints + docstring.
 
+Học viên: Trần Trọng Chinh
+Mã học viên: 2A202602720
+
 Chạy trực tiếp:
     pip install -r ../requirements.txt
     python weather_server.py
@@ -14,6 +17,16 @@ Chạy trực tiếp:
 Đăng ký với Claude Code (làm 1 lần, dùng mãi):
     claude mcp add weather -- python /đường/dẫn/tới/weather_server.py
 """
+
+import sys
+
+# Ensure UTF-8 output on Windows
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 from mcp.server.mcpserver import MCPServer
 

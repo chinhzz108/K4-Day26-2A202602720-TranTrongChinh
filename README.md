@@ -1,5 +1,12 @@
 # Phân biệt MCP và Function Calling
 
+> **Học viên:** Trần Trọng Chinh  
+> **Mã học viên:** 2A202602720  
+> **Khóa học:** VinUni AI20k - Day 26: Model Context Protocol (MCP) & Tools Integration  
+> **Trạng thái bài nộp:** Hoàn thành toàn diện 4 phần (01-function-calling, 02-mcp-basics, 03-production, 04-lab), vượt qua 6/6 bài kiểm tra (`python verify_all.py`).
+
+---
+
 Đây là hai khái niệm hay bị nhầm lẫn nhưng thực ra ở **hai tầng khác nhau**, và **bổ sung cho nhau** chứ không thay thế.
 
 ## Cấu trúc repo

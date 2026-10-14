@@ -1,8 +1,20 @@
-"""Client test cho versioned_server.py — gọi cả tool v1, v2 và đọc server metadata."""
+"""Client test cho versioned_server.py — gọi cả tool v1, v2 và đọc server metadata.
+
+Học viên: Trần Trọng Chinh
+Mã học viên: 2A202602720
+"""
 
 import asyncio
 import json
 import sys
+
+# Ensure UTF-8 output on Windows
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client

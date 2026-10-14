@@ -4,6 +4,9 @@ Client tạo HTTP client bằng create_mcp_http_client(headers=...) của MCP SD
 (đúng thư viện HTTP mà SDK dùng bên dưới, kèm timeout khuyến nghị). Header
 Authorization được gắn vào mọi request HTTP (POST, GET, DELETE) tới server.
 
+Học viên: Trần Trọng Chinh
+Mã học viên: 2A202602720
+
 Cách chạy (cần auth_server.py đang chạy ở terminal khác):
     cd 03-production
     python auth_server.py            # terminal 1
@@ -13,8 +16,16 @@ Cách chạy (cần auth_server.py đang chạy ở terminal khác):
 from __future__ import annotations
 
 import asyncio
-
 import os
+import sys
+
+# Ensure UTF-8 output on Windows
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 from mcp import ClientSession
 from mcp.client.streamable_http import create_mcp_http_client, streamable_http_client

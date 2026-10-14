@@ -3,6 +3,9 @@
 Server chạy qua HTTP (Streamable HTTP) thay vì stdio, kèm bearer token
 verification. Chỉ request mang token hợp lệ mới được phép khám phá và gọi tool.
 
+Học viên: Trần Trọng Chinh
+Mã học viên: 2A202602720
+
 Luồng hoạt động:
   Client gửi request HTTP kèm header "Authorization: Bearer <token>"
     → MCP SDK tự chạy BearerAuthBackend để xác minh token
@@ -18,6 +21,15 @@ Cách chạy:
 from __future__ import annotations
 
 import os
+import sys
+
+# Ensure UTF-8 output on Windows
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 from mcp.server.auth.provider import AccessToken, TokenVerifier
 from mcp.server.auth.settings import AuthSettings
